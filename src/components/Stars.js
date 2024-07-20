@@ -7,20 +7,31 @@
 // ReviewList: a container inside of a Movie that houses Review components.
 // Review: A text review a user can leave on a movie.
 // ReviewForm: a form at the bottom of a Movie component that allows users to leave reviews. When submitted, the review should be added to the movie. All this data can be stored in an array, no networking or database needed for this assignment.
+import React,{useState} from 'react';
 
-import logo from './logo.svg';
-import './App.css';
-import React, { useState } from 'react';
-import MovieList from './components/MovieList';
-import { moviesArray } from './MovieArray';
+const Stars = ({ initialRating, onRatingChange }) => {
+  const [rating, setRating] = useState(initialRating);
 
-const App = () => {
-  return (
-    <div className="container">
-      <h1>Movie Reviews</h1>
-      <MovieList movies={moviesArray} />
-    </div>
-  );
+  const handleStarClick = (newRating) => {
+    setRating(newRating);
+    onRatingChange(newRating);
+  };
+
+  const stars = [];
+  for (let i = 1; i <= 5; i++) {
+    stars.push(
+      <span
+        key={i}
+        style={{ color: i <= rating ? 'gold' : 'gray', cursor: 'pointer' }}
+        onClick={() => handleStarClick(i)}
+        className='star'
+      >
+        ★
+      </span>
+    );
+  }
+
+  return <div className='stars'>{stars}</div>;
 };
 
-export default App;
+export default Stars;
