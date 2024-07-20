@@ -13,6 +13,7 @@ import ReviewList from './ReviewList';
 import ReviewForm from './ReviewForm';
 
 const Movie = ({ movie }) => {
+  // this creats a variable to use later to add to state
   const [reviews, setReviews] = useState(movie.reviews);
   const [rating, setRating] = useState(movie.rating);
 
@@ -25,13 +26,17 @@ const Movie = ({ movie }) => {
   };
 
   return (
+    // This is what is shown for each movie
     <div>
       <h2>{movie.title}</h2>
       <img src={movie.image} alt={movie.title} />
       <p>{movie.description}</p>
       <p>Release Date: {movie.releaseDate}</p>
+      {/* This calls the star component and passes the props of state */}
       <Stars initialRating={rating} onRatingChange={handleRatingChange} />
+      {/* This calls the reviewlist Componant and passes the props of state */}
       <ReviewList reviews={reviews} />
+      {/* This calls the reviewform componant and passes the props of state  */}
       <ReviewForm addReview={addReview} />
     </div>
   );

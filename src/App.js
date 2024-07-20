@@ -18,6 +18,7 @@ const App = () => {
   return (
     <div className="container">
       <h1>Movie Reviews</h1>
+      {/* where I pull the movie list compnant and pass into it the props which is my movie array. */}
       <MovieList movies={moviesArray} />
     </div>
   );

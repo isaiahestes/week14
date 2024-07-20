@@ -12,6 +12,7 @@ import Review from './Review';
 
 const ReviewList = ({ reviews }) => {
   return (
+    // This displays any current reviews also calls the review componant and passes in the props so each reveiw elemant has an id
     <div>
       <h3>Reviews:</h3>
       {reviews.length > 0 ? (

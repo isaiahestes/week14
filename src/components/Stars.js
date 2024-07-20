@@ -16,7 +16,7 @@ const Stars = ({ initialRating, onRatingChange }) => {
     setRating(newRating);
     onRatingChange(newRating);
   };
-
+//  this creates the star rating view which are stars and allows the user to change them
   const stars = [];
   for (let i = 1; i <= 5; i++) {
     stars.push(

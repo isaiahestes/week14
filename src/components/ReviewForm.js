@@ -11,7 +11,7 @@ import React, { useState } from 'react';
 
 const ReviewForm = ({ addReview }) => {
   const [reviewText, setReviewText] = useState('');
-
+// this si waht happens when you click the submit button
   const handleSubmit = (e) => {
     e.preventDefault();
     if (reviewText) {

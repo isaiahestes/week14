@@ -13,6 +13,7 @@ import Movie from './Movie';
 const MovieList = ({ movies }) => {
   return (
     <div>
+      {/* This builds the list of my movies and gives each element at id */}
       {movies.map(movie => (
         <Movie key={movie.id} movie={movie} />
       ))}
